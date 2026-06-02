@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<!-- saved from url=(0110)file:///C:/Users/NITHISH/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/71UBY9KS/incident-form.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On-Tour Irregularity &amp; Escalation Form — Royal Arabian</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#F4F6F9;color:#1A1A1A;font-size:14px;line-height:1.5}
+  .page{max-width:820px;margin:0 auto;padding:24px 16px 60px}
+  .ra-header{background:#fff;border-radius:12px;padding:18px 28px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,0.10);border-bottom:4px solid #f1b434}
+  .ra-logo{display:flex;align-items:center}
+  .ra-logo img{height:50px;width:auto;display:block}
+  .ra-contact{text-align:right;font-size:12px;color:#7A8FA6;line-height:1.9}
+  .ra-contact a{color:#141b4d;text-decoration:none}
+  .form-title{text-align:center;margin-bottom:20px}
+  .form-title h1{font-size:22px;font-weight:700;color:#141b4d}
+  .form-title p{font-size:13px;color:#666;margin-top:5px}
+  .cfg-card{background:#EAF1FA;border:1px solid #B5D4F4;border-radius:10px;padding:16px 20px;margin-bottom:20px}
+  .cfg-card .cfg-title{font-size:13px;font-weight:600;color:#0C447C;margin-bottom:12px}
+  .cfg-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .cfg-note{font-size:12px;color:#185FA5;margin-top:10px;display:flex;align-items:flex-start;gap:6px;line-height:1.5}
+  .alert-box{padding:14px 18px;border-radius:8px;margin-bottom:20px;display:none;font-size:13px}
+  .alert-box.show{display:block}
+  .alert-success{background:#d4edda;border:1px solid #c3e6cb;color:#155724}
+  .alert-error{background:#f8d7da;border:1px solid #f5c6cb;color:#721c24}
+  .alert-warning{background:#fff3cd;border:1px solid #ffeaa7;color:#856404}
+  .progress-bar{background:#E0E0E0;height:8px;border-radius:4px;margin-bottom:8px;overflow:hidden}
+  .progress-fill{background:#141b4d;height:100%;transition:width 0.3s;border-radius:4px}
+  .progress-text{text-align:center;font-size:12px;color:#666;margin-bottom:20px}
+  .section{background:#fff;border-radius:10px;margin-bottom:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+  .sec-header{padding:13px 18px;font-size:13px;font-weight:600;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
+  .sec-header .arrow{font-size:18px;transition:transform 0.22s}
+  .sec-header.open .arrow{transform:rotate(180deg)}
+  .sec-body{padding:18px 20px;display:none}
+  .sec-body.open{display:block}
+  .field-row{display:grid;gap:12px;margin-bottom:14px}
+  .c2{grid-template-columns:1fr 1fr}
+  .c3{grid-template-columns:1fr 1fr 1fr}
+  .field-group{display:flex;flex-direction:column;gap:5px}
+  .field-group label{font-size:12px;font-weight:600;color:#444}
+  .field-group input,.field-group textarea{font-size:13px;padding:8px 11px;border:1px solid #D0D8E4;border-radius:7px;background:#FAFBFC;color:#1A1A1A;width:100%;outline:none;transition:border-color 0.15s;font-family:inherit}
+  .field-group input:focus,.field-group textarea:focus{border-color:#141b4d;background:#fff}
+  .field-group textarea{resize:vertical;min-height:88px;line-height:1.55}
+  .req{color:#E24B4A;margin-left:2px}
+  .ref-box{background:#F3F6FA;border:1px solid #D0D8E4;border-radius:8px;padding:11px 16px;display:flex;align-items:center;gap:16px;margin-bottom:14px;flex-wrap:wrap}
+  .ref-num{font-size:18px;font-weight:700;color:#141b4d}
+  .ref-lbl{font-size:11px;color:#7A8FA6;margin-bottom:2px}
+  .ref-badge{background:#141b4d;color:#f1b434;padding:3px 11px;border-radius:6px;font-size:11px;font-weight:600;margin-left:auto}
+  .priority-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin-bottom:6px}
+  .pri-btn{padding:10px 8px;border:1.5px solid #D0D8E4;border-radius:8px;text-align:center;cursor:pointer;background:#FAFBFC;transition:all 0.15s}
+  .pri-btn:hover{border-color:#888;background:#F0F0F0}
+  .pri-btn .pri-label{font-size:13px;font-weight:600;margin-bottom:3px}
+  .pri-btn .pri-hint{font-size:11px;color:#777;line-height:1.3}
+  .pri-btn.sel-critical{background:#FCEBEB;border-color:#E24B4A}
+  .pri-btn.sel-critical .pri-label{color:#791F1F}
+  .pri-btn.sel-high{background:#FAEEDA;border-color:#EF9F27}
+  .pri-btn.sel-high .pri-label{color:#633806}
+  .pri-btn.sel-medium{background:#EAF3DE;border-color:#639922}
+  .pri-btn.sel-medium .pri-label{color:#27500A}
+  .pri-btn.sel-low{background:#E6F1FB;border-color:#378ADD}
+  .pri-btn.sel-low .pri-label{color:#0C447C}
+  .check-group{display:flex;flex-wrap:wrap;gap:8px 18px;padding:6px 0}
+  .check-group label{display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer}
+  .check-group input[type=checkbox],.check-group input[type=radio]{width:15px;height:15px;cursor:pointer;accent-color:#141b4d}
+  .sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .sig-box{background:#F3F6FA;border:1px solid #D0D8E4;border-radius:8px;padding:16px}
+  .sig-box .sig-title{font-size:12px;font-weight:600;color:#141b4d;margin-bottom:12px}
+  .btn-row{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap}
+  .btn{padding:10px 20px;border:1.5px solid #D0D8E4;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;background:#fff;transition:all 0.2s}
+  .btn:hover{background:#f5f5f5;border-color:#999}
+  .btn-preview{background:#378ADD;color:#fff;border-color:#378ADD}
+  .btn-preview:hover{background:#2c6db8;border-color:#2c6db8}
+  .btn-clear{background:#E24B4A;color:#fff;border-color:#E24B4A}
+  .btn-clear:hover{background:#c93836;border-color:#c93836}
+  .btn-submit{background:#f1b434;color:#412402;border-color:#f1b434;font-size:14px;padding:12px 32px}
+  .btn-submit:hover{background:#d9a028;border-color:#d9a028}
+  .btn-submit:disabled,.btn-preview:disabled,.btn-clear:disabled{opacity:.6;cursor:not-allowed}
+  .follow-up-box{background:#E6F1FB;padding:12px;border-radius:8px;margin-top:10px;display:none}
+  .follow-up-box.show{display:block}
+  .preview-card{background:#fff;border:1px solid #D0D8E4;border-radius:10px;margin-top:20px;overflow:hidden;display:none}
+  .preview-card.open{display:block}
+  .preview-header{background:#F3F6FA;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #D0D8E4}
+  .preview-header span{font-size:13px;font-weight:600;color:#141b4d}
+  .preview-body{padding:18px;background:#FAFBFC;font-family:monospace;font-size:12px;white-space:pre-wrap;line-height:1.6;max-height:500px;overflow-y:auto}
+  .close-preview{background:transparent;border:1px solid #D0D8E4;padding:4px 12px;border-radius:6px;font-size:12px;cursor:pointer;color:#666}
+  .close-preview:hover{background:#e0e0e0}
+  @media(max-width:640px){
+    .cfg-grid,.c2,.c3,.priority-grid,.sig-grid{grid-template-columns:1fr}
+    .ref-badge{margin-left:0}
+    .btn-row{flex-direction:column}
+    .btn,.btn-submit,.btn-preview,.btn-clear{width:100%}
+    .ra-header{flex-direction:column;gap:12px;text-align:center}
+    .ra-contact{text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<!-- Alert Box -->
+<div class="alert-box" id="alertBox"></div>
+
+<!-- Header -->
+<div class="ra-header">
+  <div class="ra-logo">
+    <img src="RA Logo - New.png" alt="Royal Arabian" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" style="height:50px;width:auto"><span style="display:none;font-size:20px;font-weight:700;color:#141b4d;letter-spacing:1px">ROYAL ARABIAN</span>
+  </div>
+  <div class="ra-contact">
+    <div><a href="https://www.royalarabian.com" target="_blank">www.royalarabian.com</a></div>
+    <div>JLT, Dubai, UAE | +971 4 514 3883</div>
+  </div>
+</div>
+
+<!-- Title -->
+<div class="form-title">
+  <h1>On-Tour Irregularity &amp; Escalation Form</h1>
+  <p>Fill in all sections accurately and submit — your email app will open with the report</p>
+</div>
+
+<!-- Configuration -->
+<div class="cfg-card">
+  <div class="cfg-title">⚙️ Configuration — Google Apps Script</div>
+  <div class="cfg-grid">
+    <div class="field-group">
+      <label>Apps Script Web App URL <span class="req">*</span></label>
+      <input type="text" id="gasUrl" placeholder="https://script.google.com/macros/s/xxxxxx/exec">
+    </div>
+    <div class="field-group">
+      <label>Send report to (email) <span class="req">*</span></label>
+      <input type="email" id="cfgTo" value="operations@royalarabian.com">
+    </div>
+    <div class="field-group">
+      <label>CC (optional)</label>
+      <input type="email" id="cfgCc">
+    </div>
+  </div>
+  <div class="cfg-note">ℹ️&nbsp; Deploy the provided Google Apps Script as a Web App, then paste the URL above. Completely free &amp; unlimited via Gmail.</div>
+  <div style="margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+    <button type="button" onclick="testGasConnection()" style="background:#141b4d;color:#f1b434;border:none;border-radius:6px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer">🔍 Test Connection &amp; Check Ref</button>
+    <span id="testResult" style="font-size:12px;color:#444"></span>
+  </div>
+</div>
+
+<!-- Progress -->
+<div class="progress-bar">
+  <div class="progress-fill" id="progressFill" style="width:100%"></div>
+</div>
+<div class="progress-text">
+  <span id="progressText">9 of 9 sections reviewed</span>
+</div>
+
+<!-- Incident Reference -->
+<div class="ref-box">
+  <div>
+    <div class="ref-lbl">Incident reference no.</div>
+    <div class="ref-num" id="refDisp">INC-2026-0001</div>
+    <button type="button" onclick="manualSetRef()" title="Manually set incident number" style="background:none;border:1px solid #D0D8E4;border-radius:6px;padding:3px 8px;cursor:pointer;font-size:12px;color:#7A8FA6;margin-left:4px">✏️ Set Number</button>
+  </div>
+  <div class="ref-badge">AUTO-GENERATED</div>
+</div>
+
+<!-- Section 1: Incident Basics -->
+<div class="section">
+  <div class="sec-header open" style="background:#141b4d" onclick="toggleSec(this)">
+    <span>📋 Section 1 — Incident basics</span>
+    <span class="arrow open">▼</span>
+  </div>
+  <div class="sec-body open">
+    <div class="field-row c2">
+      <div class="field-group">
+        <label>Date of incident <span class="req">*</span></label>
+        <input type="date" id="incDate">
+      </div>
+      <div class="field-group">
+        <label>Time of incident <span class="req">*</span></label>
+        <input type="time" id="incTime">
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Location (city/venue/hotel) <span class="req">*</span></label>
+      <input type="text" id="incLoc">
+    </div>
+    <div class="field-row c2">
+      <div class="field-group">
+        <label>Booking reference <span class="req">*</span></label>
+        <input type="text" id="bookRef">
+      </div>
+      <div class="field-group">
+        <label>Guest name(s) <span class="req">*</span></label>
+        <input type="text" id="guestName">
+      </div>
+    </div>
+    <div class="field-row c3">
+      <div class="field-group">
+        <label>Destination <span class="req">*</span></label>
+        <input type="text" id="dest">
+      </div>
+      <div class="field-group">
+        <label>Tour leader/guide</label>
+        <input type="text" id="guide">
+      </div>
+      <div class="field-group">
+        <label>No. of pax affected <span class="req">*</span></label>
+        <input type="number" id="pax">
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Agent / company</label>
+      <input type="text" id="agent">
+    </div>
+  </div>
+</div>
+
+<!-- Section 2: Priority -->
+<div class="section">
+  <div class="sec-header open" style="background:#E24B4A" onclick="toggleSec(this)">
+    <span>⚡ Section 2 — Priority level</span>
+    <span class="arrow open">▼</span>
+  </div>
+  <div class="sec-body open">
+    <input type="hidden" id="pri" value="high">
+    <div class="priority-grid">
+      <div class="pri-btn" onclick="setPri(&#39;critical&#39;,this)">
+        <div class="pri-label">CRITICAL</div>
+        <div class="pri-hint">Immediate</div>
+      </div>
+      <div class="pri-btn sel-high" onclick="setPri(&#39;high&#39;,this)">
+        <div class="pri-label">HIGH</div>
+        <div class="pri-hint">Same day</div>
+      </div>
+      <div class="pri-btn" onclick="setPri(&#39;medium&#39;,this)">
+        <div class="pri-label">MEDIUM</div>
+        <div class="pri-hint">24-48h</div>
+      </div>
+      <div class="pri-btn" onclick="setPri(&#39;low&#39;,this)">
+        <div class="pri-label">LOW</div>
+        <div class="pri-hint">Non-urgent</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 3: Nature of Issue -->
+<div class="section">
+  <div class="sec-header open" style="background:#EF9F27" onclick="toggleSec(this)">
+    <span>🔍 Section 3 — Nature of issue</span>
+    <span class="arrow open">▼</span>
+  </div>
+  <div class="sec-body open">
+    <div class="field-group">
+      <label>Issue category (select all that apply) <span class="req">*</span></label>
+      <div class="check-group">
+        <label><input type="checkbox" name="cat" value="Accommodation"> Accommodation</label>
+        <label><input type="checkbox" name="cat" value="Transportation"> Transportation</label>
+        <label><input type="checkbox" name="cat" value="Flight"> Flight</label>
+        <label><input type="checkbox" name="cat" value="Activity / Excursion"> Activity / Excursion</label>
+        <label><input type="checkbox" name="cat" value="Restaurant / Dining"> Restaurant / Dining</label>
+        <label><input type="checkbox" name="cat" value="Guide / Staff"> Guide / Staff</label>
+        <label><input type="checkbox" name="cat" value="Guest Behavior"> Guest Behavior</label>
+        <label><input type="checkbox" name="cat" value="Health / Medical"> Health / Medical</label>
+        <label><input type="checkbox" name="cat" value="Safety / Security"> Safety / Security</label>
+        <label><input type="checkbox" name="cat" value="Other"> Other</label>
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Supplier / vendor involved</label>
+      <input type="text" id="supplier">
+    </div>
+    <div class="field-group">
+      <label>Issue summary / description <span class="req">*</span></label>
+      <textarea id="issueDesc" placeholder="Provide a clear and detailed description of what happened..."></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- Section 4: Escalation -->
+<div class="section">
+  <div class="sec-header open" style="background:#639922" onclick="toggleSec(this)">
+    <span>📞 Section 4 — Escalation details</span>
+    <span class="arrow open">▼</span>
+  </div>
+  <div class="sec-body open">
+    <div class="field-row c2">
+      <div class="field-group">
+        <label>Escalated to (name)</label>
+        <input type="text" id="escName">
+      </div>
+      <div class="field-group">
+        <label>Role</label>
+        <input type="text" id="escRole">
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Mode of escalation</label>
+      <div class="check-group">
+        <label><input type="radio" name="escMode" value="Phone"> Phone</label>
+        <label><input type="radio" name="escMode" value="Email"> Email</label>
+        <label><input type="radio" name="escMode" value="WhatsApp"> WhatsApp</label>
+        <label><input type="radio" name="escMode" value="In-person"> In-person</label>
+        <label><input type="radio" name="escMode" value="Other"> Other</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 5: Actions & Resolution -->
+<div class="section">
+  <div class="sec-header open" style="background:#378ADD" onclick="toggleSec(this)">
+    <span>✅ Section 5 — Actions &amp; resolution</span>
+    <span class="arrow open">▼</span>
+  </div>
+  <div class="sec-body open">
+    <div class="field-group">
+      <label>Immediate action taken <span class="req">*</span></label>
+      <textarea id="action" placeholder="Describe what was done immediately to address the issue..."></textarea>
+    </div>
+    <div class="field-group">
+      <label>Resolution provided to guest</label>
+      <textarea id="resolution" placeholder="How was the situation resolved for the guest?"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- Section 6: Compensation -->
+<div class="section">
+  <div class="sec-header open" style="background:#7C3AED" onclick="toggleSec(this)">
+    <span>💰 Section 6 — Compensation &amp; cost</span>
+    <span class="arrow open">▼</span>
+  </div>
+  <div class="sec-body open">
+    <div class="field-row c2">
+      <div class="field-group">
+        <label>Compensation / gesture given</label>
+        <input type="text" id="comp" placeholder="e.g., Refund, upgrade, voucher...">
+      </div>
+      <div class="field-group">
+        <label>Amount (AED)</label>
+        <input type="number" id="compAmt">
+      </div>
+    </div>
+    <div class="field-row c2">
+      <div class="field-group">
+        <label>Cost absorbed by</label>
+        <input type="text" id="costBy" placeholder="e.g., Company, Supplier, Shared...">
+      </div>
+      <div class="field-group">
+        <label>Approved by</label>
+        <input type="text" id="approvedBy">
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Documents attached</label>
+      <div class="check-group">
+        <label><input type="checkbox" name="docs" value="Receipt"> Receipt</label>
+        <label><input type="checkbox" name="docs" value="Email trail"> Email trail</label>
+        <label><input type="checkbox" name="docs" value="Photos"> Photos</label>
+        <label><input type="checkbox" name="docs" value="Report"> Report</label>
+        <label><input type="checkbox" name="docs" value="Other"> Other</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 7: Case Closure -->
+<div class="section">
+  <div class="sec-header open" style="background:#0C447C" onclick="toggleSec(this)">
+    <span>🏁 Section 7 — Case closure</span>
+    <span class="arrow open">▼</span>
+  </div>
+  <div class="sec-body open">
+    <div class="field-row c2">
+      <div class="field-group">
+        <label>Case status</label>
+        <input type="text" id="caseStatus" placeholder="Open / Pending / Resolved / Closed">
+      </div>
+      <div class="field-group">
+        <label>Closure date</label>
+        <input type="date" id="closureDate">
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Follow-up required?</label>
+      <div class="check-group">
+        <label><input type="radio" name="followUp" value="Yes" onchange="toggleFollowUp()"> Yes</label>
+        <label><input type="radio" name="followUp" value="No" onchange="toggleFollowUp()"> No</label>
+      </div>
+    </div>
+    <div class="follow-up-box" id="fuRow">
+      <div class="field-row c2">
+        <div class="field-group">
+          <label>Follow-up by (name)</label>
+          <input type="text" id="fuName">
+        </div>
+        <div class="field-group">
+          <label>By date</label>
+          <input type="date" id="fuDate">
+        </div>
+      </div>
+    </div>
+    <div class="field-row c2">
+      <div class="field-group">
+        <label>Handled / closed by</label>
+        <input type="text" id="closedBy">
+      </div>
+      <div class="field-group">
+        <label>Reviewed by (manager)</label>
+        <input type="text" id="reviewedBy">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 8: Additional Remarks -->
+<div class="section">
+  <div class="sec-header open" style="background:#475569" onclick="toggleSec(this)">
+    <span>📝 Section 8 — Additional remarks</span>
+    <span class="arrow open">▼</span>
+  </div>
+  <div class="sec-body open">
+    <div class="field-group">
+      <label>Internal notes / lessons learned</label>
+      <textarea id="remarks" placeholder="Any additional context, learnings, or recommendations..."></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- Section 9: Sign-off -->
+<div class="section">
+  <div class="sec-header open" style="background:#141b4d" onclick="toggleSec(this)">
+    <span>✍️ Section 9 — Sign-off</span>
+    <span class="arrow open">▼</span>
+  </div>
+  <div class="sec-body open">
+    <div class="sig-grid">
+      <div class="sig-box">
+        <div class="sig-title">Submitted by</div>
+        <div class="field-group">
+          <label>Name</label>
+          <input type="text" id="sigName">
+        </div>
+        <div class="field-group" style="margin-top:10px">
+          <label>Date</label>
+          <input type="date" id="sigDate">
+        </div>
+      </div>
+      <div class="sig-box">
+        <div class="sig-title">Acknowledged by (manager)</div>
+        <div class="field-group">
+          <label>Name</label>
+          <input type="text" id="ackName">
+        </div>
+        <div class="field-group" style="margin-top:10px">
+          <label>Date</label>
+          <input type="date" id="ackDate">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Preview Card -->
+<div class="preview-card" id="previewCard">
+  <div class="preview-header">
+    <span>📧 Email Preview</span>
+    <button class="close-preview" onclick="closePreview()">Close</button>
+  </div>
+  <div class="preview-body" id="emailBody"></div>
+</div>
+
+<!-- Action Buttons -->
+<div class="btn-row">
+  <button class="btn btn-preview" onclick="previewEmail()">👁️ Preview Email</button>
+  <button class="btn btn-submit" onclick="submitForm()">📧 Submit &amp; Send Email</button>
+  <button class="btn btn-clear" onclick="clearForm()">🗑️ Clear Form</button>
+</div>
+
+</div>
+
+<script>
+  
+  let priority = '';
+
+  // Reference number — loaded from localStorage, synced with Sheet count on each submit
+  let currentRef = buildRefEarly();
+  function buildRefEarly() {
+    try {
+      const n = parseInt(localStorage.getItem('ra_inc_num_v2') || '1', 10);
+      return 'INC-' + new Date().getFullYear() + '-' + String(n).padStart(4, '0');
+    } catch(e) { return 'INC-' + new Date().getFullYear() + '-0001'; }
+  }
+
+  // ---- Incident number: stored in localStorage, synced with Sheet via POST response ----
+  const INC_KEY = 'ra_inc_num_v2';
+
+  function getSavedNum() {
+    try { return parseInt(localStorage.getItem(INC_KEY) || '1', 10); } catch(e) { return 1; }
+  }
+  function setSavedNum(n) {
+    try { localStorage.setItem(INC_KEY, n); } catch(e) {}
+  }
+
+  function buildRef(n) {
+    const year = new Date().getFullYear();
+    return 'INC-' + year + '-' + String(n).padStart(4, '0');
+  }
+
+  function testGasConnection() {
+    const gasUrl = document.getElementById('gasUrl').value.trim();
+    const out = document.getElementById('testResult');
+    if (!gasUrl || !gasUrl.startsWith('https://script.google.com/macros/s/')) {
+      out.style.color = '#721c24';
+      out.textContent = '❌ Please paste your Web App URL first.';
+      return;
+    }
+    out.style.color = '#444';
+    out.textContent = '⏳ Testing connection...';
+
+    fetch(gasUrl + '?action=getRef&t=' + Date.now())
+      .then(r => r.json())
+      .then(data => {
+        if (data.ref) {
+          setSavedNum(data.num);
+          currentRef = buildRef(data.num);
+          document.getElementById('refDisp').textContent = currentRef;
+          out.style.color = '#155724';
+          out.textContent = '✅ Connected! Sheet says next ref = ' + data.ref + ' (submissions so far: ' + (data.num - 1) + ')';
+        } else {
+          out.style.color = '#856404';
+          out.textContent = '⚠️ Connected but unexpected response — redeploy script as New Version.';
+        }
+      })
+      .catch(err => {
+        out.style.color = '#721c24';
+        out.textContent = '❌ Cannot reach script: ' + err.message;
+      });
+  }
+
+  function fetchRefFromSheet() {
+    // No-op: ref is managed locally and synced via POST response
+  }
+
+  // Fetch ref when URL is pasted/changed
+  document.getElementById('gasUrl').addEventListener('change', fetchRefFromSheet);
+  document.getElementById('gasUrl').addEventListener('blur', fetchRefFromSheet);
+
+  function genRef() { return currentRef; }
+
+  function manualSetRef() {
+    const val = prompt('Enter the next incident number to use (e.g. 5 for INC-2026-0005):', getSavedNum());
+    if (val === null) return;
+    const n = parseInt(val, 10);
+    if (isNaN(n) || n < 1) { alert('Please enter a valid number.'); return; }
+    setSavedNum(n);
+    currentRef = buildRef(n);
+    document.getElementById('refDisp').textContent = currentRef;
+  }
+
+  // Initialize display
+  document.getElementById('refDisp').textContent = currentRef;
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('incDate').value = today;
+  document.getElementById('sigDate').value = today;
+
+  function showAlert(message, type) {
+    const alertBox = document.getElementById('alertBox');
+    alertBox.textContent = message;
+    alertBox.className = 'alert-box alert-' + type + ' show';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    setTimeout(() => {
+      alertBox.classList.remove('show');
+    }, 8000);
+  }
+
+  function toggleSec(hdr) {
+    const body = hdr.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    hdr.classList.toggle('open', !isOpen);
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const total = document.querySelectorAll('.sec-body').length;
+    const open = document.querySelectorAll('.sec-body.open').length;
+    document.getElementById('progressFill').style.width = Math.round((open / total) * 100) + '%';
+    document.getElementById('progressText').textContent = open + ' of ' + total + ' sections reviewed';
+  }
+
+  function setPri(val, el) {
+    priority = val;
+    document.getElementById('pri').value = val;
+    document.querySelectorAll('.pri-btn').forEach(b => b.className = 'pri-btn');
+    el.className = 'pri-btn sel-' + val;
+  }
+
+  function toggleFollowUp() {
+    const val = document.querySelector('input[name="followUp"]:checked');
+    document.getElementById('fuRow').className = 'follow-up-box' + (val && val.value === 'Yes' ? ' show' : '');
+  }
+
+  function gv(id) {
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+
+  function gcbs(name) {
+    const c = Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(c => c.value);
+    return c.length ? c.join(', ') : '—';
+  }
+
+  function grb(name) {
+    const el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : '—';
+  }
+
+  function validate() {
+    const fields = [
+      ['cfgTo', 'Operations email'],
+      ['incDate', 'Date of incident'],
+      ['incTime', 'Time of incident'],
+      ['incLoc', 'Location'],
+      ['bookRef', 'Booking reference'],
+      ['guestName', 'Guest name(s)'],
+      ['dest', 'Destination'],
+      ['pax', 'No. of pax affected'],
+      ['issueDesc', 'Issue summary'],
+      ['action', 'Immediate action taken']
+    ];
+    
+    for (const [id, lbl] of fields) {
+      if (!gv(id)) {
+        showAlert('❌ Please fill in: ' + lbl, 'error');
+        const el = document.getElementById(id);
+        if (el) {
+          el.focus();
+          setTimeout(() => {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        }
+        return false;
+      }
+    }
+
+    // Validate email format
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRe.test(gv('cfgTo'))) {
+      showAlert('❌ Please enter a valid recipient email address.', 'error');
+      document.getElementById('cfgTo').focus();
+      return false;
+    }
+    
+    if (!priority) {
+      showAlert('❌ Please select a priority level in Section 2.', 'error');
+      return false;
+    }
+    
+    if (!document.querySelector('input[name="cat"]:checked')) {
+      showAlert('❌ Please select at least one issue category in Section 3.', 'error');
+      return false;
+    }
+    
+    return true;
+  }
+
+  function buildEmail() {
+    const ref = genRef();
+    const priLabels = { critical: 'CRITICAL', high: 'HIGH', medium: 'MEDIUM', low: 'LOW' };
+    const priLabel = priLabels[priority] || priority.toUpperCase();
+    const now = new Date().toLocaleString('en-GB', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    
+    const lines = [
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+      '  ROYAL ARABIAN — ON-TOUR IRREGULARITY & ESCALATION REPORT',
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+      '',
+      'Incident Ref No. : ' + ref,
+      'Submitted on     : ' + now,
+      'Reported by      : ' + (gv('sigName') || '—'),
+      '',
+      '─── SECTION 1: INCIDENT BASICS ──────────────────',
+      'Date of incident : ' + gv('incDate'),
+      'Time of incident : ' + gv('incTime'),
+      'Location         : ' + gv('incLoc'),
+      'Booking ref      : ' + gv('bookRef'),
+      'Guest name(s)    : ' + gv('guestName'),
+      'Destination      : ' + gv('dest'),
+      'Tour leader/guide: ' + (gv('guide') || '—'),
+      'Pax affected     : ' + gv('pax'),
+      'Agent / company  : ' + (gv('agent') || '—'),
+      '',
+      '─── SECTION 2: PRIORITY ─────────────────────────',
+      'Priority level   : *** ' + priLabel + ' ***',
+      '',
+      '─── SECTION 3: NATURE OF ISSUE ──────────────────',
+      'Issue category   : ' + gcbs('cat'),
+      'Supplier involved: ' + (gv('supplier') || '—'),
+      '',
+      'Issue summary:',
+      gv('issueDesc'),
+      '',
+      '─── SECTION 4: ESCALATION DETAILS ───────────────',
+      'Escalated to     : ' + (gv('escName') || '—') + (gv('escRole') ? ' (' + gv('escRole') + ')' : ''),
+      'Mode             : ' + grb('escMode'),
+      '',
+      '─── SECTION 5: ACTIONS & RESOLUTION ─────────────',
+      'Immediate action taken:',
+      gv('action'),
+      '',
+      'Resolution provided:',
+      gv('resolution') || '—',
+      '',
+      '─── SECTION 6: COMPENSATION & COST ──────────────',
+      'Compensation given: ' + (gv('comp') || '—'),
+      'Amount (AED)      : ' + (gv('compAmt') || '0'),
+      'Cost absorbed by  : ' + (gv('costBy') || '—'),
+      'Approved by       : ' + (gv('approvedBy') || '—'),
+      'Documents attached: ' + gcbs('docs'),
+      '',
+      '─── SECTION 7: CASE CLOSURE ─────────────────────',
+      'Case status       : ' + (gv('caseStatus') || '—'),
+      'Closure date      : ' + (gv('closureDate') || '—'),
+      'Follow-up required: ' + grb('followUp')
+    ];
+    
+    if (grb('followUp') === 'Yes') {
+      lines.push('Follow-up by      : ' + (gv('fuName') || '—') + '  |  By date: ' + (gv('fuDate') || '—'));
+    }
+    
+    lines.push(
+      'Handled/closed by : ' + (gv('closedBy') || '—'),
+      'Reviewed by       : ' + (gv('reviewedBy') || '—'),
+      '',
+      '─── SECTION 8: ADDITIONAL REMARKS ───────────────',
+      gv('remarks') || '—',
+      '',
+      '─── SECTION 9: SIGN-OFF ──────────────────────────',
+      'Submitted by      : ' + (gv('sigName') || '—') + '  |  Date: ' + (gv('sigDate') || '—'),
+      'Acknowledged by   : ' + (gv('ackName') || '—') + '  |  Date: ' + (gv('ackDate') || '—'),
+      '',
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+      '  Submitted via Royal Arabian On-Tour Irregularity E-Form',
+      '  www.royalarabian.com  |  JLT, Dubai, UAE  |  +971 4 514 3883',
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'
+    );
+    
+    return { ref, priLabel, body: lines.join('\n') };
+  }
+
+  function previewEmail() {
+    if (!validate()) return;
+    
+    const { body } = buildEmail();
+    document.getElementById('emailBody').textContent = body;
+    const card = document.getElementById('previewCard');
+    card.classList.add('open');
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function closePreview() {
+    document.getElementById('previewCard').classList.remove('open');
+  }
+
+  function submitForm() {
+    if (!validate()) return;
+
+    const gasUrl = document.getElementById('gasUrl').value.trim();
+    if (!gasUrl || !gasUrl.startsWith('https://script.google.com/macros/s/')) {
+      showAlert('❌ Please paste your Google Apps Script Web App URL in the configuration section at the top.', 'error');
+      document.getElementById('gasUrl').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    const submitBtn = document.querySelector('.btn-submit');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '⏳ Sending...';
+
+    const { ref, priLabel, body } = buildEmail();
+    const subject = '[' + priLabel + '] ' + ref + ' — Irregularity Report — ' + gv('dest') + ' (' + gv('incDate') + ')';
+
+    const payload = {
+      to:           gv('cfgTo'),
+      cc:           gv('cfgCc') || '',
+      subject:      subject,
+      body:         body,
+      ref:          ref,
+      priority:     priLabel,
+      destination:  gv('dest'),
+      guest_name:   gv('guestName'),
+      booking_ref:  gv('bookRef'),
+      submitted_by: gv('sigName') || '—'
+    };
+
+    const formData = new FormData();
+    Object.entries(payload).forEach(([k, v]) => formData.append(k, v));
+
+    fetch(gasUrl, {
+      method: 'POST',
+      body: formData
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (data.status === 'error') {
+        showAlert('❌ Script error: ' + (data.message || 'Unknown'), 'error');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        return;
+      }
+      // Sync ref from Sheet — authoritative count across ALL computers
+      if (data.nextNum) {
+        setSavedNum(data.nextNum);
+        currentRef = buildRef(data.nextNum);
+        document.getElementById('refDisp').textContent = currentRef;
+      }
+      showAlert('✅ Report sent & logged! Email sent to ' + gv('cfgTo') + '. Ref used: ' + ref, 'success');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    })
+    .catch(err => {
+      showAlert('❌ Could not reach Google Apps Script. Check your internet connection and URL. Error: ' + err, 'error');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    });
+  }
+
+  function clearForm() {
+    if (!confirm('Are you sure you want to clear all form fields? This action cannot be undone.')) {
+      return;
+    }
+
+    // Clear all text inputs except default email
+    document.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], input[type="date"], input[type="time"]').forEach(input => {
+      if (input.id !== 'cfgTo') {
+        input.value = '';
+      }
+    });
+
+    // Clear all textareas
+    document.querySelectorAll('textarea').forEach(textarea => {
+      textarea.value = '';
+    });
+
+    // Uncheck all checkboxes and radios
+    document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(input => {
+      input.checked = false;
+    });
+
+    // Reset priority
+    priority = '';
+    document.querySelectorAll('.pri-btn').forEach(btn => {
+      btn.className = 'pri-btn';
+    });
+
+    // Hide follow-up box
+    document.getElementById('fuRow').className = 'follow-up-box';
+
+    // Close preview
+    closePreview();
+
+    // Reset dates to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('incDate').value = today;
+    document.getElementById('sigDate').value = today;
+
+    showAlert('✅ Form cleared successfully!', 'success');
+  }
+</script>
+
+
+</body></html>
