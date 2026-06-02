@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- saved from url=(0110)file:///C:/Users/NITHISH/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/71UBY9KS/incident-form.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -509,7 +510,7 @@
   function testGasConnection() {
     const gasUrl = document.getElementById('gasUrl').value.trim();
     const out = document.getElementById('testResult');
-    if (!gasUrl || !gasUrl.startsWith('https://script.google.com/macros/s/')) {
+    if (!gasUrl || !gasUrl.startsWith('https://')) {
       out.style.color = '#721c24';
       out.textContent = '❌ Please paste your Web App URL first.';
       return;
@@ -773,7 +774,7 @@
     if (!validate()) return;
 
     const gasUrl = document.getElementById('gasUrl').value.trim();
-    if (!gasUrl || !gasUrl.startsWith('https://script.google.com/macros/s/')) {
+    if (!gasUrl || !gasUrl.startsWith('https://')) {
       showAlert('❌ Please paste your Google Apps Script Web App URL in the configuration section at the top.', 'error');
       document.getElementById('gasUrl').scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
