@@ -558,6 +558,17 @@
     document.getElementById('refDisp').textContent = currentRef;
   }
 
+  // Auto-save & restore Worker URL from localStorage
+  (function() {
+    try {
+      const saved = localStorage.getItem('ra_worker_url');
+      if (saved) document.getElementById('gasUrl').value = saved;
+    } catch(e) {}
+  })();
+  document.getElementById('gasUrl').addEventListener('input', function() {
+    try { localStorage.setItem('ra_worker_url', this.value.trim()); } catch(e) {}
+  });
+
   // Initialize display
   document.getElementById('refDisp').textContent = currentRef;
   const today = new Date().toISOString().split('T')[0];
