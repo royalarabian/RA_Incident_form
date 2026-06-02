@@ -124,8 +124,8 @@
   <div class="cfg-title">⚙️ Configuration — Google Apps Script</div>
   <div class="cfg-grid">
     <div class="field-group">
-      <label>Apps Script Web App URL <span class="req">*</span></label>
-      <input type="text" id="gasUrl" placeholder="https://script.google.com/macros/s/xxxxxx/exec">
+      <label>Cloudflare Worker URL <span class="req">*</span></label>
+      <input type="text" id="gasUrl" placeholder="https://your-worker.your-subdomain.workers.dev">
     </div>
     <div class="field-group">
       <label>Send report to (email) <span class="req">*</span></label>
@@ -136,7 +136,7 @@
       <input type="email" id="cfgCc">
     </div>
   </div>
-  <div class="cfg-note">ℹ️&nbsp; Deploy the provided Google Apps Script as a Web App, then paste the URL above. Completely free &amp; unlimited via Gmail.</div>
+  <div class="cfg-note">ℹ️&nbsp; Paste your <strong>Cloudflare Worker URL</strong> here (not the GAS URL directly). The worker acts as a proxy to fix CORS. Free &amp; unlimited.</div>
   <div style="margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
     <button type="button" onclick="testGasConnection()" style="background:#141b4d;color:#f1b434;border:none;border-radius:6px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer">🔍 Test Connection &amp; Check Ref</button>
     <span id="testResult" style="font-size:12px;color:#444"></span>
@@ -800,10 +800,15 @@
       submitted_by: gv('sigName') || '—'
     };
 
+    // Send as URL-encoded — Worker forwards this to GAS
+    const encoded = Object.entries(payload)
+      .map(([k,v]) => encodeURIComponent(k) + '=' + encodeURIComponent(v))
+      .join('&');
+
     fetch(gasUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encoded
     })
     .then(r => r.json())
     .then(data => {
