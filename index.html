@@ -800,12 +800,10 @@
       submitted_by: gv('sigName') || '—'
     };
 
-    const formData = new FormData();
-    Object.entries(payload).forEach(([k, v]) => formData.append(k, v));
-
     fetch(gasUrl, {
       method: 'POST',
-      body: formData
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
     })
     .then(r => r.json())
     .then(data => {
